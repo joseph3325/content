@@ -884,8 +884,6 @@ def gsuite_user_signout_command(client: Client, args: Dict[str, str]) -> Command
 
     client.http_request(url_suffix=URL_SUFFIX['SIGN_OUT_USER'].format(user_key), method='POST')
 
-    msg = urllib.parse.unquote('User: {}  has been signed out of all sessions...'.format(user_key))
-
     return CommandResults(readable_output=HR_MESSAGES['USER_SIGNOUT_SUCCESS'].format(args.get('user_key')))
 
 
